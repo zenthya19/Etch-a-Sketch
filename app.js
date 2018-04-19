@@ -20,9 +20,10 @@ function createGrid(number) {
 }
 }
 
+createGrid(16);
+
 
 function drawBlackSquares() {
-	createGrid(16);
 	let blackSquares = document.querySelectorAll(".square");
 	blackSquares.forEach(square => square.addEventListener('mouseover', (e) => {
 	square.style.backgroundColor = 'black';
@@ -31,7 +32,6 @@ function drawBlackSquares() {
 
 
 function drawRainbowSquares() {
-	createGrid(16);
 	let rainbowSquares = document.querySelectorAll(".square");
 	rainbowSquares.forEach(square => square.addEventListener('mouseover', (e) => {
 	square.style.backgroundColor = drawRainbowColor();
@@ -58,6 +58,7 @@ function resizeGrid() {
 	let number = prompt('Enter a number between 1 and 100 to resize the grid.')
 	clearGrid();
 	createGrid(number);
+	drawBlackSquares();
 	
 }	
 

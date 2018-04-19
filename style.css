@@ -3,6 +3,25 @@
 	padding: 0;
 }
 
+body {
+	background-color: #ADDFFF;
+}
+
+
+h1 {
+	text-align: center;
+	padding-top: 25px;
+	font-family: 'Berkshire Swash', cursive;
+}
+
+p {
+	position: absolute;
+	top: 17.5%;
+	left: 45%;
+	font-family: 'Berkshire Swash', cursive;
+
+}
+
 .square {
 	display: inline-block;
 	float: left;
@@ -11,6 +30,33 @@
 #container {
 	width: 640px;
 	height: 640px;
-	border: 1px solid;
+	border: 20px solid;
 	margin: 125px auto;
+	border-color: #CF3D3D;
+	border-radius: 3%;
+	background-color: white;
 }
+
+/* Buttons */
+
+.buttons {
+	position: absolute;
+	top: 11%;
+	left: 39%;
+}
+
+#draw-black, #draw-rainbow, #grid-size, #clear-grid {
+	background-color: #55BBFD;
+	border: 1px solid;
+	border-radius: 12%;
+	padding: 12px 25px;
+	font-weight: bold;
+	border-color: #1D87D9;
+	font-family: 'Berkshire Swash', cursive;
+	font-size: 17px;
+}
+
+#draw-black:hover, #draw-rainbow:hover, #grid-size:hover, #clear-grid:hover {
+	background-color: #80CDFF;
+}
+
