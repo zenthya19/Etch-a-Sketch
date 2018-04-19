@@ -5,11 +5,12 @@
 
 .square {
 	display: inline-block;
+	float: left;
 }
 
 #container {
 	width: 640px;
-	width: 640px;
+	height: 640px;
 	border: 1px solid;
 	margin: 125px auto;
 }

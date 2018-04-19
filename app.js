@@ -1,4 +1,8 @@
 container_div = document.getElementById('container');
+drawblack_button = document.getElementById('draw-black');
+drawrainbow_button = document.getElementById('draw-rainbow');
+gridsize_button = document.getElementById('grid-size');
+cleargrid_button = document.getElementById('clear-grid');
 
 
 function createGrid(number) {
@@ -16,4 +20,48 @@ function createGrid(number) {
 }
 }
 
-createGrid(16);
+
+function drawBlackSquares() {
+	createGrid(16);
+	let blackSquares = document.querySelectorAll(".square");
+	blackSquares.forEach(square => square.addEventListener('mouseover', (e) => {
+	square.style.backgroundColor = 'black';
+	}));
+}
+
+
+function drawRainbowSquares() {
+	createGrid(16);
+	let rainbowSquares = document.querySelectorAll(".square");
+	rainbowSquares.forEach(square => square.addEventListener('mouseover', (e) => {
+	square.style.backgroundColor = drawRainbowColor();
+	}))
+}
+
+function drawRainbowColor() {
+	let letters = '0123456789ABCDEF';
+	let color = '#';
+	for(let i = 0; i < 6; i++) {
+		color += letters[Math.floor(Math.random() * 16)];
+	}
+	return color;
+}
+
+function clearGrid() {
+	let parent = document.getElementById('container');
+	while(parent.firstChild) {
+		parent.removeChild(parent.firstChild);
+	}
+}
+
+function resizeGrid() {
+	let number = prompt('Enter a number between 1 and 100 to resize the grid.')
+	clearGrid();
+	createGrid(number);
+	
+}	
+
+drawblack_button.addEventListener('click', () => drawBlackSquares());
+drawrainbow_button.addEventListener('click', () => drawRainbowSquares());
+cleargrid_button.addEventListener('click', () => clearGrid());
+gridsize_button.addEventListener('click', () => resizeGrid());
